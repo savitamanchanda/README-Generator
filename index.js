@@ -1,13 +1,15 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
+const util = require('util');
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
         message: "What is your GitHub username?",
         name: 'username',
-        default: 'savitamanchanda',
         validate: function (answer) {
             if (answer.length < 1) {
                 return console.log("Please enter a valid GitHub username.");
@@ -17,9 +19,19 @@ const questions = [
     },
     {
         type: 'input',
+        message: "What is your email address?",
+        name: 'email',
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("Please enter a valid email address.");
+            }
+            return true;
+        }
+    },
+    {
+        type: 'input',
         message: "What is the name of your GitHub repo?",
         name: 'repo',
-        default: 'README-Generator',
         validate: function (answer) {
             if (answer.length < 1) {
                 return console.log("Please enter a valid Github repo.");
@@ -31,7 +43,6 @@ const questions = [
         type: 'input',
         message: "What is the title of your project?",
         name: 'title',
-        default: 'README Generator',
         validate: function (answer) {
             if (answer.length < 1) {
                 return console.log("Please enter a valid project title.");
@@ -43,7 +54,6 @@ const questions = [
         type: 'input',
         message: "Write a description of your project.",
         name: 'description',
-        default: 'A command-line application to generate a README file.',
         validate: function (answer) {
             if (answer.length < 1) {
                 return console.log("Please enter valid project description.");
@@ -60,7 +70,7 @@ const questions = [
     {
         type: 'input',
         message: "Describe the steps required to install your project",
-        name: 'Installation',
+        name: 'installation',
         when: ({confirmInstallation}) => {
             if (confirmInstallation) {
                 return true;
@@ -96,7 +106,7 @@ const questions = [
     {
         type: 'input',
         name: 'contribution',
-        message: 'Describe how can others contribute to this project?',
+        message: 'Describe how others can contribute to this project?',
         when: ({confirmContribution}) => {
             if (confirmContribution) {
                 return true;
@@ -104,6 +114,11 @@ const questions = [
                 return false;
             }
         }
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Describe how others can test your application?'
     },
     {
         type: 'confirm',
@@ -114,16 +129,24 @@ const questions = [
     {
         type: 'list',
         message: "Choose a license for your project.",
-        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
+        choices: ['agpl-3.0', 'gpl-3.0', 'lgpl-3.0', 'mpl-2.0', 'apache-2.0', 'mit', 'bsl-1.0', 'unlicense','none'],
         name: 'license'
     }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(content) {
+    fs.writeFile("README.md", content, () => console.log("Successfully created README."));
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    return inquirer.prompt(questions).then((data) => {
+        const content = generateMarkdown(data);
+        writeToFile(content);
+    });
+}
+
 
 // Function call to initialize app
 init();
