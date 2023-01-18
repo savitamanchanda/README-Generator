@@ -79,8 +79,8 @@ THEN I am taken to the corresponding section of the README
 
   For any questions, Please reach out at: 
 
-  GitHub: http://github.com/savitamanchanda
-  Email: manchandasavita3@gmail.com
+  * GitHub: http://github.com/savitamanchanda
+  * Email: manchandasavita3@gmail.com
 
   ## Links to the Deployed Application 
 
