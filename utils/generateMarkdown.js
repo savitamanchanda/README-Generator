@@ -98,15 +98,15 @@ function generateMarkdown(data) {
 
   ## Description
 
-  (${data.description});
+  ${data.description}
 
   ## Installation 
 
-  (${data.installation})
+  ${data.installation}
 
   ## Usage 
 
-  (${data.usage})
+  ${data.usage}
 
   ## License 
 
@@ -116,11 +116,11 @@ function generateMarkdown(data) {
 
   ## Contribution 
 
-  (${data.contribution})
+  ${data.contribution}
 
   ## Tests
 
-  (${data.tests})
+  ${data.tests}
 
   ## Questions 
 

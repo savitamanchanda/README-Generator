@@ -30,17 +30,6 @@ const questions = [
     },
     {
         type: 'input',
-        message: "What is the name of your GitHub repo?",
-        name: 'repo',
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return console.log("Please enter a valid Github repo.");
-            }
-            return true;
-        }
-    },
-    {
-        type: 'input',
         message: "What is the title of your project?",
         name: 'title',
         validate: function (answer) {
