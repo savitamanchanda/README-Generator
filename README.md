@@ -3,14 +3,14 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](${renderLicenseLink(license))
 
   ## Table of Contents
-  * [Description] (#description)
-  * [Installation] (#installation)
-  * [Usage] (#usage)
-  * [License] (#license)
-  * [Contribution] (#contribution)
-  * [Tests] (#tests)
-  * [Questions] (#questions)
-  * [Credits] (#credits)
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contribution](#contribution)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  * [Credits](#credits)
 
 
   ## Description
@@ -21,8 +21,8 @@
   ## Installation 
 
   It is important to have the following programs installed on your computer: 
-  * [`VS Code`] 
-  * [`Node.js`]
+  * `VS Code` 
+  * `Node.js`
 
   ## Usage 
   
