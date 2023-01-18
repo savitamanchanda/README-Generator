@@ -82,5 +82,11 @@ THEN I am taken to the corresponding section of the README
   GitHub: http://github.com/savitamanchanda
   Email: manchandasavita3@gmail.com
 
-  
+  ## Links to the Deployed Application 
+
+  * The URL of the deployed application - https://savitamanchanda.github.io/README-Generator/
+
+  * The URL of the GitHub repository - https://github.com/savitamanchanda/README-Generator
+
+  * [Video Demenstration](./images%3Aassets/README-Generator.gif)
 
