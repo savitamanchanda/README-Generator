@@ -88,5 +88,5 @@ THEN I am taken to the corresponding section of the README
 
   * The URL of the GitHub repository - https://github.com/savitamanchanda/README-Generator
 
-  * [Video Demenstration](./images%3Aassets/README-Generator.gif)
+  * [Video Demonstration](./images%3Aassets/README-Generator.gif)
 
